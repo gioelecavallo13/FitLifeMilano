@@ -1,22 +1,21 @@
 <?php
-$servername = "mysql-211d9df4-gioelecavallo13-5cd8.h.aivencloud.com";
-$username   = "avnadmin";
-$password = getenv('DB_PASSWORD');
-$dbname  = "defaultdb";
-$port = 23072;
+$servername = getenv('DB_SERVERNAME');
+$username   = getenv('DB_USERNAME');
+$password   = getenv('DB_PASSWORD');
+$dbname     = getenv('DB_DBNAME');
+$port       = (int) getenv('DB_PORT'); // variabile d'ambiente
 
-// Percorsi ai certificati Aiven (se richiesti)
-$ssl_ca     = __DIR__ . '/ca.pem'; // devi scaricare il certificato CA da Aiven
+$ssl_ca = __DIR__ . '/config/ca.pem'; // file non committato, solo locale/prod
 
 $conn = mysqli_init();
 mysqli_ssl_set($conn, NULL, NULL, $ssl_ca, NULL, NULL);
 
-// Connetti
 mysqli_real_connect($conn, $servername, $username, $password, $dbname, $port, NULL, MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT);
 
-// Controlla connessione
 if ($conn->connect_error) {
-    die("Connessione fallita: " . $conn->connect_error);
+    error_log("Connessione fallita: " . $conn->connect_error);
+    die("Errore di connessione al DB.");
 }
+
 echo "Connessione avvenuta con successo!";
 ?>
