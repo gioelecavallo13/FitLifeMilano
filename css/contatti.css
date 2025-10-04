@@ -1,0 +1,217 @@
+.section-1 {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('/images/home-img-1.jpg') center/cover no-repeat;
+}
+
+.login-form {
+    background: rgba(30, 30, 30, 0.92);
+    padding: 36px 32px 28px 32px;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    align-items: stretch;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.login-form h2 {
+    color: #ffcc00;
+    margin-bottom: 22px;
+    text-align: center;
+    font-size: 1.5em;
+    letter-spacing: 0.03em;
+}
+
+.login-form label {
+    color: #fff;
+    text-align: left;
+    margin-bottom: 6px;
+    margin-top: 12px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.login-form input,
+.login-form textarea {
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: none;
+    margin-bottom: 8px;
+    background: rgb(87, 86, 86);
+    color: #fff;
+    font-size: 1em;
+    outline: none;
+    transition: box-shadow 0.2s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    font-family: inherit;
+}
+
+.login-form input:focus,
+.login-form textarea:focus {
+    box-shadow: 0 0 0 2px #ffcc00;
+}
+
+.login-form textarea {
+    min-height: 80px;
+    max-height: 300px;
+    resize: vertical;
+}
+
+.btn-login {
+    margin-top: 18px;
+    padding: 12px 0;
+    background: #ffcc00;
+    color: #222;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-login:hover {
+    background: #7e6502;
+    color: #fff;
+}
+
+/* --- HERO (1° SPAZIO) --- */
+.section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: grey;
+    margin: 0;
+    padding: 0;
+}
+
+#immagine-1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    color: #fff;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* --- CONTATTI --- */
+.contatti-flex {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    padding: 80px 0 40px 0;
+    flex-wrap: wrap;
+}
+
+.contatti-form-wrapper,
+.contatti-mappa-wrapper {
+    flex: 1 1 100%;
+    max-width: 500px; /* massimo 500px su tablet e desktop */
+    margin: 0 auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.contatti-form-wrapper .login-form,
+.contatti-mappa {
+    width: 100%;
+    flex: 1;
+    max-height: 80vh;
+    box-sizing: border-box;
+}
+
+.contatti-mappa {
+    border: 3px solid #ffcc00;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    background: #fff;
+}
+
+/* MOBILE piccolo (<600px) */
+@media (max-width: 600px) {
+    .contatti-flex {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+        padding: 20px 0;
+        margin: 0;
+    }
+
+    .contatti-form-wrapper,
+    .contatti-mappa-wrapper {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 10px;
+        margin: 0 auto;
+    }
+
+    .contatti-form-wrapper .login-form,
+    .contatti-mappa {
+        max-height: 70vh;
+        flex: 1;
+    }
+}
+
+/* Tablet/Small Desktop (<900px) */
+@media (max-width: 900px) {
+    .contatti-flex {
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        padding: 40px 0 20px 0;
+        margin: 0 auto;
+    }
+
+    .contatti-form-wrapper,
+    .contatti-mappa-wrapper {
+        width: 90%;
+        max-width: 500px; /* massimo 500px su tablet */
+    }
+
+    .contatti-form-wrapper .login-form,
+    .contatti-mappa {
+        max-height: 75vh;
+        flex: 1;
+    }
+}
+
+.login-form input,
+.login-form textarea {
+    font-family: inherit;
+}
