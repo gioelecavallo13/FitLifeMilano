@@ -15,7 +15,5 @@ mysqli_real_connect($conn, $servername, $username, $password, $dbname, $port, NU
 if ($conn->connect_error) {
     error_log("Connessione fallita: " . $conn->connect_error);
     die("Errore di connessione al DB.");
-} else {
-    error_log("Connessione al DB avvenuta con successo!");
 }
 ?>
