@@ -12,8 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $corso = $conn->real_escape_string($_POST['corso']);
 
     // Query corretta con apici
-    $sql = "INSERT INTO clienti (nome, cognome, email, telefono, id_corso) 
-            VALUES ('$nome', '$cognome', '$email', '$telefono', '$corso')";
+    $sql = "INSERT INTO clienti (nome, cognome, email, telefono) 
+            VALUES ('$nome', '$cognome', '$email', '$telefono')";
 
     if ($conn->query($sql) === TRUE) {
         // Successo
